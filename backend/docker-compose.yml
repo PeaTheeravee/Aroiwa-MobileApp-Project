@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  aroiwa-backend:
+    build: .
+    container_name: aroiwa-backend
+    user: root
+    ports:
+      - "8000:8000"
+    cap_add:
+      - SYS_PTRACE
+    privileged: true   # <-- Add this line
+    command: poetry run uvicorn "aroiwa.main:create_app" --host 0.0.0.0 --port 8000 --reload
+
+  postgres:
+    image: postgres:14
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: aroiwadb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 6410110677@psu.ac.th
+      PGADMIN_DEFAULT_PASSWORD: 123456789
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+volumes:
+  postgres_data:
+  pgadmin_data:

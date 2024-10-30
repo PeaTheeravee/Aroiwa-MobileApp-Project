@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[url: 'https://gitlab.psu.ac.th/6410110677/aroiwa.git']])
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                sh '''
+                    python3 --version  # Ensure Python is installed on the agent
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r backend/requirements.txt
+                    pip install coverage
+                '''
+            }
+        }
+        stage('Build') {
+            steps {
+                sh '''
+                    export SQLDB_URL=postgresql+asyncpg://postgres:123456@localhost/aroiwadb
+                    . venv/bin/activate
+                    export PYTHONPATH=$(pwd)/backend  # Set PYTHONPATH to the backend folder
+                    python3 -m aroiwa.main  # Adjusted to match the module structure
+                '''
+            }
+        }
+        stage('Test') {
+            steps {
+                // Run pytest in the virtual environment
+                sh '''
+                    . venv/bin/activate
+                    export SQLDB_URL=postgresql+asyncpg://postgres:123456@localhost/aroiwadb  # Set SQLDB_URL for tests
+                    export PYTHONPATH=$(pwd)/backend  # Set PYTHONPATH to the backend folder
+                    python3 -m pytest backend/aroiwa/tests  # Run pytest with the correct test directory
+                '''
+            }
+        }
+    }
+}

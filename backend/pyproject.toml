@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "aroiwa"
+version = "0.1.0"
+description = ""
+authors = ["Paramet-p <paramet.works@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.112.2"
+uvicorn = "^0.30.6"
+asyncpg = "^0.29.0"
+sqlmodel = "^0.0.21"
+pydantic = {extras = ["email"], version = "^2.8.2"}
+pydantic-settings = "^2.4.0"
+pyjwt = "^2.9.0"
+passlib = "^1.7.4"
+python-multipart = "^0.0.9"
+bcrypt = "^4.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
