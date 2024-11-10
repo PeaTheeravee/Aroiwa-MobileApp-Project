@@ -1,6 +1,7 @@
 เป็นตัวอย่างสำหรับ App ที่เสร็จสมบูรณ์ มีทั้ง Frontend-Backend การDevOps เเละ การ Deploy
 -สำหรับการ DevOps ไฟล์ที่เกี่ยวข้องคือ .jenkinsfile
 -สำหรับการ Deploy ไฟล์ที่เกี่ยวข้องคือ docker-compose.yml , Dockerfile เเละ URL ทั้งหมดจะถูกเปลี่ยน เช่น จาก Uri.parse('http://10.0.2.2:8000/token') กลายเป็น Uri.parse('http://54.169.248.246:8000/token') เป็นต้น
+-เปิด Server โดยใช้ AWS เเละ ใช้ Service เป็น ec2
 
 วิธีรันฝั่งblackend
 1. cd backend
