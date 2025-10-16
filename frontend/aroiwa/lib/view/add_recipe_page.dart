@@ -63,7 +63,7 @@ class _AddRecipePageState extends State<AddRecipePage> {
 
   Future<void> submitRecipe() async {
     if (_formKey.currentState!.validate()) {
-      final url = Uri.parse('http://10.0.2.2:8000/recipes/create');
+      final url = Uri.parse('http://localhost:8000/recipes/create');
       final prefs = await SharedPreferences.getInstance();
       final accessToken = prefs.getString('access_token');
       final userId = prefs.getInt('user_id');

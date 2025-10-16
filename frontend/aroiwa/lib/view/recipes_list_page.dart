@@ -34,7 +34,7 @@ class _RecipesListPageState extends State<RecipesListPage> {
   }
 
   Future<void> fetchRecipes() async {
-    final url = Uri.parse('http://10.0.2.2:8000/recipes/all');
+    final url = Uri.parse('http://localhost:8000/recipes/all');
     print('this is : $url');
     final response = await http.get(url);
 
@@ -75,7 +75,7 @@ class _RecipesListPageState extends State<RecipesListPage> {
   }
 
   Future<String> fetchScore(int recipeId) async {
-    final url = Uri.parse('http://10.0.2.2:8000/scores/$recipeId');
+    final url = Uri.parse('http://localhost:8000/scores/$recipeId');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -89,7 +89,7 @@ class _RecipesListPageState extends State<RecipesListPage> {
   }
 
   Future<Map<String, dynamic>> fetchScoreSort(int recipeId) async {
-    final url = Uri.parse('http://10.0.2.2:8000/scores/$recipeId');
+    final url = Uri.parse('http://localhost:8000/scores/$recipeId');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {

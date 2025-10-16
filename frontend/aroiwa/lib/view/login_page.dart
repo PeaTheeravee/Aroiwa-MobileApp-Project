@@ -58,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://10.0.2.2:8000/token'),
+        Uri.parse('http://localhost:8000/token'),
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         encoding: Encoding.getByName('utf-8'),
         body: {'username': username, 'password': password},

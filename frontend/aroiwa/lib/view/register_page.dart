@@ -138,7 +138,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://10.0.2.2:8000/users/create'),
+        Uri.parse('http://localhost:8000/users/create'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'email': email,
