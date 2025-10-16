@@ -27,7 +27,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
   }
 
   Future<void> fetchRecipes() async {
-    final url = Uri.parse('http://54.169.248.246:8000/recipes/all');
+    final url = Uri.parse('http://10.0.2.2:8000/recipes/all');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -58,7 +58,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
 
     try {
       final response = await http.get(
-        Uri.parse('http://54.169.248.246:8000/users/me'), // Updated URL
+        Uri.parse('http://10.0.2.2:8000/users/me'), // Updated URL
         headers: {
           'Authorization': 'Bearer $accessToken',
           'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
   }
 
   Future<String> fetchScore(int recipeId) async {
-    final url = Uri.parse('http://54.169.248.246:8000/scores/$recipeId');
+    final url = Uri.parse('http://10.0.2.2:8000/scores/$recipeId');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {

@@ -70,7 +70,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
   Future<void> fetchRecipes() async {
     int recipeId = widget.recipeId;
 
-    final url = Uri.parse('http://54.169.248.246:8000/recipes/$recipeId');
+    final url = Uri.parse('http://10.0.2.2:8000/recipes/$recipeId');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -92,7 +92,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
   }
 
   Future<void> fetchRecipeUser() async {
-    final url = Uri.parse('http://54.169.248.246:8000/users/$recipeUserId');
+    final url = Uri.parse('http://10.0.2.2:8000/users/$recipeUserId');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -108,7 +108,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
   Future<void> fetchScore() async {
     int recipeId = widget.recipeId;
 
-    final url = Uri.parse('http://54.169.248.246:8000/scores/$recipeId');
+    final url = Uri.parse('http://10.0.2.2:8000/scores/$recipeId');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -135,7 +135,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
     }
 
     final url = Uri.parse(
-        'http://54.169.248.246:8000/scores/personal/$userId/$recipeId');
+        'http://10.0.2.2:8000/scores/personal/$userId/$recipeId');
 
     try {
       final response = await http.get(
@@ -205,7 +205,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
 
     // สร้าง URL สำหรับการเรียก API
     final url = Uri.parse(
-        'http://54.169.248.246:8000/scores/canpost/$userId/$recipeId');
+        'http://10.0.2.2:8000/scores/canpost/$userId/$recipeId');
 
     try {
       // เรียก API ด้วย access token
@@ -233,7 +233,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
   }
 
   Future<void> postScore(int score, int recipeId) async {
-    final url = Uri.parse('http://54.169.248.246:8000/scores/create');
+    final url = Uri.parse('http://10.0.2.2:8000/scores/create');
     final prefs = await SharedPreferences.getInstance();
     final userId = prefs.getInt('user_id');
     final accessToken = prefs.getString('access_token');
@@ -302,7 +302,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
           }
         } else {
           final url = Uri.parse(
-              'http://54.169.248.246:8000/scores/updatescore/$userId/$recipeId/$score');
+              'http://10.0.2.2:8000/scores/updatescore/$userId/$recipeId/$score');
 
           try {
             final response = await http.put(
