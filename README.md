@@ -2,6 +2,9 @@
 
 แอปพลิเคชันแบ่งปันสูตรอาหาร โปรเจครายวิชา 240-331 Mobile Applications Developer Module 4th Year 1/2567 พัฒนาโดยใช้ Flutter เป็น Frontend และ FastAPI เป็น Backend
 
+# Slide Presentation 
+https://www.canva.com/design/DAG2l2qXTsQ/V7UTjVd_1PeVMwH5gU1xog/edit?utm_content=DAG2l2qXTsQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 <img width="1540" height="800" alt="Image" src="https://github.com/user-attachments/assets/55122229-097f-4054-9840-10c45a1760eb" />
 
 <img width="1540" height="800" alt="Image" src="https://github.com/user-attachments/assets/b22128ac-cdd9-4da3-a3f5-0beae521979d" />
@@ -13,6 +16,3 @@
 <img width="1540" height="800" alt="Image" src="https://github.com/user-attachments/assets/44e7830f-1536-4398-8e01-93d1a32e3db7" />
 
 <img width="1540" height="800" alt="Image" src="https://github.com/user-attachments/assets/297395c8-e118-4c8e-9605-cbf2f2c025aa" />
-
-# Slide Presentation 
-https://www.canva.com/design/DAG2l2qXTsQ/V7UTjVd_1PeVMwH5gU1xog/edit?utm_content=DAG2l2qXTsQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
